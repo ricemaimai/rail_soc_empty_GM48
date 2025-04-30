@@ -33,12 +33,18 @@ toolchain_settings:
 component:
 - {id: EFR32FG23B010F512IM40}
 - {id: device_init}
+- instance: [inst]
+  id: iostream_eusart
+- {id: iostream_retarget_stdio}
 - {id: mpu}
 - {id: radio_config_simple_rail_singlephy}
 - instance: [inst0]
   id: rail_util_init
 - {id: rail_util_recommended}
 - {id: sl_system}
+- instance: [inst]
+  id: uartdrv_eusart
+- {id: udelay}
 requires:
 - {name: a_radio_config}
 configuration:

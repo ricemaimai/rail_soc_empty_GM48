@@ -10,7 +10,12 @@
 #include "sl_rail_util_pti.h"
 #include "sl_rail_util_rssi.h"
 #include "sl_rail_util_init.h"
+#include "sl_sleeptimer.h"
+#include "gpiointerrupt.h"
+#include "sl_iostream_init_eusart_instances.h"
 #include "sl_mpu.h"
+#include "sl_uartdrv_instances.h"
+#include "sl_iostream_init_instances.h"
 
 void sl_platform_init(void)
 {
@@ -24,11 +29,15 @@ void sl_platform_init(void)
 
 void sl_driver_init(void)
 {
+  GPIOINT_Init();
+  sl_uartdrv_init_instances();
 }
 
 void sl_service_init(void)
 {
+  sl_sleeptimer_init();
   sl_mpu_disable_execute_from_ram();
+  sl_iostream_init_instances();
 }
 
 void sl_stack_init(void)
@@ -57,5 +66,10 @@ void sl_stack_process_action(void)
 
 void sl_internal_app_process_action(void)
 {
+}
+
+void sl_iostream_init_instances(void)
+{
+  sl_iostream_eusart_init_instances();
 }
 

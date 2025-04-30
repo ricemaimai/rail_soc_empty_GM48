@@ -33,7 +33,9 @@
 // -----------------------------------------------------------------------------
 #include "sl_component_catalog.h"
 #include "rail.h"
+#include "stdio.h"
 
+#include "sl_udelay.h"
 #if defined(SL_CATALOG_KERNEL_PRESENT)
 #include "app_task_init.h"
 #endif
@@ -63,6 +65,10 @@
 void app_process_action(RAIL_Handle_t rail_handle)
 {
   (void) rail_handle;
+
+  sl_udelay_wait(1000000);
+
+  printf("test comment\n");
 
   ///////////////////////////////////////////////////////////////////////////
   // Put your application code here!                                       //

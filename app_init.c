@@ -32,7 +32,10 @@
 //                                   Includes
 // -----------------------------------------------------------------------------
 #include "sl_rail_util_init.h"
+#include <stdio.h>
+#include "uartdrv.h"
 
+#include "stdio.h"
 // -----------------------------------------------------------------------------
 //                              Macros and Typedefs
 // -----------------------------------------------------------------------------
@@ -59,6 +62,7 @@ RAIL_Handle_t app_init(void)
 {
   // Get RAIL handle, used later by the application
   RAIL_Handle_t rail_handle = sl_rail_util_get_handle(SL_RAIL_UTIL_HANDLE_INST0);
+  printf("hello world\n");
 
   /////////////////////////////////////////////////////////////////////////////
   // Put your application init code here!                                    //
