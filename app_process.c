@@ -35,6 +35,8 @@
 #include "rail.h"
 #include "stdio.h"
 
+
+
 #include "sl_udelay.h"
 #if defined(SL_CATALOG_KERNEL_PRESENT)
 #include "app_task_init.h"
@@ -59,6 +61,11 @@
 // -----------------------------------------------------------------------------
 //                          Public Function Definitions
 // -----------------------------------------------------------------------------
+
+
+
+
+
 /******************************************************************************
  * Application state machine, called infinitely
  *****************************************************************************/
@@ -67,8 +74,9 @@ void app_process_action(RAIL_Handle_t rail_handle)
   (void) rail_handle;
 
   sl_udelay_wait(1000000);
+  printf("test");
 
-  printf("test comment\n");
+
 
   ///////////////////////////////////////////////////////////////////////////
   // Put your application code here!                                       //
